@@ -12,25 +12,43 @@ namespace FactoryPattern
     }
     class ShapeFactory
     {
-        GeometricShape getShape(GeometricShape shape)
+        GeometricShape getShape(ShapeType shape)
         {
-            
+            switch (shape)
+            {
+                case ShapeType.Line:
+                    return new Line();//shape = new Line();
+                case ShapeType.Circle:
+                    return new Circle();
+                   //break; 
+                //case 
+                //return null; 
+            }
         }
     }
 
     class Line : GeometricShape
     {
-        draw(); 
+        public void draw()
+        {
+            Console.WriteLine("A Line has been drawn");    
+        }
     }
 
     class Circle
     {
-        draw(); 
+        public void draw()
+        {
+            Console.WriteLine("A Circle has been drawn");
+        } 
     }
 
     class Rectangle
     {
-        draw(); 
+        public void draw()
+        {
+            Console.WriteLine("A Rectangle has been drawn");
+        }
     }
 
     enum ShapeType
