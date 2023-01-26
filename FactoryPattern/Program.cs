@@ -63,6 +63,7 @@ namespace FactoryPattern
     {
         static void Main(string[] args)
         {
+            ShapeFactory factory = new ShapeFactory();
         }
     }
 }
