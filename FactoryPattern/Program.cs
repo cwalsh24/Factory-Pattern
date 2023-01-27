@@ -12,17 +12,18 @@ namespace FactoryPattern
     }
     class ShapeFactory
     {
-        GeometricShape getShape(ShapeType shape)
+        public GeometricShape getShape(ShapeType shape)
         {
             switch (shape)
             {
                 case ShapeType.Line:
-                    return new Line();//shape = new Line();
+                    return new Line();
                 case ShapeType.Circle:
                     return new Circle();
-                   //break; 
-                //case 
-                //return null; 
+                case ShapeType.Rectangle:
+                    return new Rectangle();
+                case ShapeType.Triangle : 
+                    return null;
             }
         }
     }
@@ -35,7 +36,7 @@ namespace FactoryPattern
         }
     }
 
-    class Circle
+    class Circle : GeometricShape
     {
         public void draw()
         {
@@ -43,7 +44,7 @@ namespace FactoryPattern
         } 
     }
 
-    class Rectangle
+    class Rectangle : GeometricShape
     {
         public void draw()
         {
@@ -64,6 +65,7 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             ShapeFactory factory = new ShapeFactory();
+            factory.getShape(ShapeType.Line);
         }
     }
 }
