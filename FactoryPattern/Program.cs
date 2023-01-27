@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FactoryPattern
 {
-    interface GeometricShape
+    public interface GeometricShape
     {
         void draw(); 
     }
-    class ShapeFactory
+    public class ShapeFactory
     {
         public GeometricShape getShape(ShapeType shape)
         {
@@ -31,7 +31,7 @@ namespace FactoryPattern
         }
     }
 
-    class Line : GeometricShape
+    public class Line : GeometricShape
     {
         public void draw()
         {
@@ -39,7 +39,7 @@ namespace FactoryPattern
         }
     }
 
-    class Circle : GeometricShape
+    public class Circle : GeometricShape
     {
         public void draw()
         {
@@ -47,7 +47,7 @@ namespace FactoryPattern
         } 
     }
 
-    class Rectangle : GeometricShape
+    public class Rectangle : GeometricShape
     {
         public void draw()
         {
@@ -55,7 +55,7 @@ namespace FactoryPattern
         }
     }
 
-    enum ShapeType
+    public enum ShapeType
     {
         Line,
         Circle,
@@ -68,10 +68,13 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             ShapeFactory factory = new ShapeFactory();
-            GeometricShape line = factory.getShape(ShapeType.Line);
-            line.draw();
+            //GeometricShape line = factory.getShape(ShapeType.Line);
+            //line.draw(); 
+            //factory.getShape(ShapeType.Triangle);
+            //Enum.GetValues
+            foreach (){
 
-            factory.getShape(ShapeType.Triangle);
+            }
             Console.ReadKey();
         }
     }
