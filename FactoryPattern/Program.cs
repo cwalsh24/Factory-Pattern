@@ -22,7 +22,10 @@ namespace FactoryPattern
                     return new Circle();
                 case ShapeType.Rectangle:
                     return new Rectangle();
-                case ShapeType.Triangle : 
+                //case ShapeType.Triangle : 
+                //    return null;
+                default:
+                    Console.WriteLine("Not a choice"); 
                     return null;
             }
         }
@@ -65,7 +68,11 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             ShapeFactory factory = new ShapeFactory();
-            factory.getShape(ShapeType.Line);
+            GeometricShape line = factory.getShape(ShapeType.Line);
+            line.draw();
+
+            factory.getShape(ShapeType.Triangle);
+            Console.ReadKey();
         }
     }
 }
