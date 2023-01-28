@@ -22,10 +22,7 @@ namespace FactoryPattern
                     return new Circle();
                 case ShapeType.Rectangle:
                     return new Rectangle();
-                //case ShapeType.Triangle : 
-                //    return null;
                 default:
-                    Console.WriteLine("Not a choice"); 
                     return null;
             }
         }
@@ -68,12 +65,16 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             ShapeFactory factory = new ShapeFactory();
-            //GeometricShape line = factory.getShape(ShapeType.Line);
-            //line.draw(); 
-            //factory.getShape(ShapeType.Triangle);
-            //Enum.GetValues
-            foreach (){
-
+            foreach (ShapeType shape in Enum.GetValues(typeof(ShapeType)))
+            {
+                if (factory.getShape(shape) == null)
+                {
+                    Console.WriteLine("Not a choice");
+                }
+                else
+                {
+                    factory.getShape(shape).draw();
+                }
             }
             Console.ReadKey();
         }
